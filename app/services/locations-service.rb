@@ -3,7 +3,7 @@ require 'json'
 class LocationsService
   class << self
     def find(name)
-      locations.select { |location| location['name'].downcase == name.downcase }
+      locations.select { |location| location['name'].downcase.include?(name.downcase) }
     end
 
     def all
